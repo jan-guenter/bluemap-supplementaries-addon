@@ -12,7 +12,7 @@ import io.github.janguenter.bluemap.supplementaries.profile.Supplementaries385Pr
 
 import java.nio.file.Path;
 
-/** Exact-artifact admission hook; family routing deliberately remains stock. */
+/** Exact-artifact admission hook for installed Supplementaries wrapper models. */
 final class ProfileResourceExtension implements ResourcePackExtension {
 
     private final ResourcePack resourcePack;
@@ -34,12 +34,20 @@ final class ProfileResourceExtension implements ResourcePackExtension {
             return;
         }
 
-        // SCAFFOLD_NOT_IMPLEMENTED: validate installed resources, register the
-        // family renderer, route only owned hosts, then call runtime.activate().
-        if (resourcePack.getBlockStates() == null) {
-            runtime.fail("resource-pack-unavailable");
+        boolean installed;
+        try {
+            installed = InstalledModelAliasInstaller.install(
+                    resourcePack.getModels(),
+                    Supplementaries385Profile.MODEL_ALIASES
+            );
+        } catch (IllegalArgumentException exception) {
+            runtime.fail("invalid-model-alias-profile");
             return;
         }
-        runtime.inactive("family-renderer-not-implemented");
+        if (!installed) {
+            runtime.inactive("required-model-alias-missing");
+            return;
+        }
+        runtime.activate();
     }
 }
