@@ -1,0 +1,6 @@
+{
+  "id": "bluemap-supplementaries",
+  "entrypoint": "io.github.janguenter.bluemap.supplementaries.BlueMapSupplementariesAddon",
+  "dependencies": [],
+  "soft-dependencies": []
+}

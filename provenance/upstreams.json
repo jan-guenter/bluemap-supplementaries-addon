@@ -1,0 +1,53 @@
+{
+  "artifacts": [
+    {
+      "curseforge_file": 8539821,
+      "curseforge_project": 412082,
+      "download_url": "https://www.curseforge.com/api/v1/mods/412082/files/8539821/download",
+      "evidence": "All the Mons 1.2.0 manifest pins CurseForge 412082/8539821; the runtime JAR is byte-identical to that official download",
+      "evidence_tier": "T2_ARTIFACT_EXACT",
+      "file_name": "supplementaries-neoforge-1.21.1-3.8.5.jar",
+      "key": "supplementaries",
+      "license": "Supplementaries Team License v.1.5",
+      "mod_id": "supplementaries",
+      "redistributed": false,
+      "sha1": "b7c9a5e2ab4d6bfb8124099ad607e07d2fec1dbc",
+      "sha256": "c05b1c9d39d37694d197ef84ffe70f9dbe995261333cc7c06610c7bff6d9599e",
+      "size": 13469336,
+      "version": "1.21.1-3.8.5"
+    },
+    {
+      "curseforge_file": 8510630,
+      "curseforge_project": 499980,
+      "download_url": "https://www.curseforge.com/api/v1/mods/499980/files/8510630/download",
+      "evidence": "All the Mons 1.2.0 manifest pins CurseForge 499980/8510630; exact required rendering-library dependency",
+      "evidence_tier": "T2_ARTIFACT_EXACT",
+      "file_name": "moonlight-neoforge-1.21.1-3.3.0.jar",
+      "key": "moonlight",
+      "license": "Supplementaries Team License v.1.5",
+      "mod_id": "moonlight",
+      "redistributed": false,
+      "sha1": "2752b6ab1ded59ab91942e380f0f1853e57dc1ca",
+      "sha256": "30420824c7f9fbca0317551c8fd6bbdce01c8d745edf5bc8d61e42393c5f0335",
+      "size": 2135671,
+      "version": "1.21.1-3.3.0"
+    }
+  ],
+  "bluemap": {
+    "api_commit": "285c9a60eff3ac2b0cab308ce1058d1565be0971",
+    "commit": "9be321df995a1103808621d529eb72773e719d4d",
+    "license": "MIT",
+    "redistributed": false,
+    "version": "5.22-agent.backport-5.22-mc1.21.1-2"
+  },
+  "pack": {
+    "commit": "c7bb230f21d14d26859d0b92548f089b3a493ad9",
+    "minecraft": "1.21.1",
+    "name": "All the Mons",
+    "neoforge": "21.1.248",
+    "version": "1.2.0"
+  },
+  "profile": "supplementaries-1.21.1-3.8.5",
+  "schema": 1,
+  "source_use": "Runtime interfaces and installed resources may be interpreted only after family-specific evidence is recorded; no candidate classes, assets, binaries, source, or captured meshes are packaged."
+}
