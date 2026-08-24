@@ -33,19 +33,35 @@ final class ProfileResourceExtension implements ResourcePackExtension {
             runtime.inactive("exact-artifact-missing-or-duplicate");
             return;
         }
+        Path supplementariesJar = ExactArtifactDetector.match(
+                roots,
+                Supplementaries385Profile.ARTIFACTS.getFirst()
+        ).orElse(null);
+        if (supplementariesJar == null) {
+            runtime.inactive("exact-artifact-missing-or-duplicate");
+            return;
+        }
 
         boolean installed;
         try {
-            installed = InstalledModelAliasInstaller.install(
+            if (!InstalledModelAliasInstaller.canInstall(
                     resourcePack.getModels(),
                     Supplementaries385Profile.MODEL_ALIASES
-            );
+            )) {
+                runtime.inactive("required-installed-resource-missing");
+                return;
+            }
+            installed = InstalledStaticModelInstaller.install(resourcePack, supplementariesJar)
+                    && InstalledModelAliasInstaller.install(
+                            resourcePack.getModels(),
+                            Supplementaries385Profile.MODEL_ALIASES
+                    );
         } catch (IllegalArgumentException exception) {
             runtime.fail("invalid-model-alias-profile");
             return;
         }
         if (!installed) {
-            runtime.inactive("required-model-alias-missing");
+            runtime.inactive("required-installed-resource-missing");
             return;
         }
         runtime.activate();

@@ -4,9 +4,9 @@ A Java 21 BlueMap add-on for the exact `supplementaries-1.21.1-3.8.5` profile in
 `1.2.0` / Minecraft `1.21.1`.
 
 Status: implemented prototype awaiting visual staging. After exact admission,
-the add-on aliases eight Supplementaries wrapper models to concrete models
-already installed by the exact candidate JAR. BlueMap then applies the stock
-blockstates, rotations, texture collection, and model bake.
+the add-on reuses concrete models already installed by the exact candidate JAR,
+adds static book fallbacks, and reconstructs both gallery globes from their
+installed stand, body, and texture-atlas resources.
 
 ## Build
 
@@ -29,10 +29,12 @@ Set `-Dbluemap.supplementaries.disabled=true` to leave the exact profile inactiv
 
 ## Scope boundary
 
-The implemented aliases cover empty jars and goblets, blackboard frames,
-wall/floor/ceiling flower boxes, and the two faucet wrapper models. The add-on
-does not draw fluids, blackboard pixels, flowers, live contents, particles, or
-animation state. Missing or changed required models keep the full alias set
+The implemented fallbacks cover empty jars and goblets, blackboard frames,
+wall/floor/ceiling flower boxes, faucets, filled-state timber members, bellows,
+jar boats, both book-pile families, and both globe colors. Timber mimic fills
+and book contents remain outside this static pass. The add-on does not draw
+fluids, blackboard pixels, flowers, live contents, sign text, particles, or
+animation state. Missing or changed required resources keep the full install
 inactive, with no partial resource changes.
 
 No Supplementaries binary, source, class, asset, captured mesh, or gallery is

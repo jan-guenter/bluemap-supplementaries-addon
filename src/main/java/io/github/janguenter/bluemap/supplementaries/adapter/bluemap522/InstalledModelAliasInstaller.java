@@ -24,6 +24,24 @@ final class InstalledModelAliasInstaller {
             return false;
         }
 
+        Map<Key, T> replacements = replacements(models, aliases);
+        if (replacements == null) {
+            return false;
+        }
+        replacements.forEach(models::put);
+        return true;
+    }
+
+    static <T> boolean canInstall(ResourcePool<T> models, Map<String, String> aliases) {
+        Objects.requireNonNull(models, "models");
+        Objects.requireNonNull(aliases, "aliases");
+        return !aliases.isEmpty() && replacements(models, aliases) != null;
+    }
+
+    private static <T> Map<Key, T> replacements(
+            ResourcePool<T> models,
+            Map<String, String> aliases
+    ) {
         Map<Key, T> replacements = new LinkedHashMap<>();
         for (Map.Entry<String, String> alias : aliases.entrySet()) {
             Key wrapper = Key.parse(alias.getKey());
@@ -34,12 +52,11 @@ final class InstalledModelAliasInstaller {
                     || wrapperModel == null
                     || !models.containsKey(target)
                     || targetModel == null) {
-                return false;
+                return null;
             }
             replacements.put(wrapper, targetModel);
         }
 
-        replacements.forEach(models::put);
-        return true;
+        return replacements;
     }
 }

@@ -11,9 +11,15 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import de.bluecolored.bluemap.core.resources.pack.PackVersion;
 import de.bluecolored.bluemap.core.resources.pack.resourcepack.ResourcePack;
+import de.bluecolored.bluemap.core.resources.pack.resourcepack.blockstate.BlockState;
+import de.bluecolored.bluemap.core.resources.pack.resourcepack.blockstate.Variant;
+import de.bluecolored.bluemap.core.resources.pack.resourcepack.blockstate.VariantSet;
+import de.bluecolored.bluemap.core.resources.pack.resourcepack.blockstate.Variants;
 import de.bluecolored.bluemap.core.resources.pack.resourcepack.model.Element;
 import de.bluecolored.bluemap.core.resources.pack.resourcepack.model.Model;
+import de.bluecolored.bluemap.core.resources.ResourcePath;
 import de.bluecolored.bluemap.core.util.Key;
+import com.flowpowered.math.vector.Vector3f;
 import io.github.janguenter.bluemap.supplementaries.activation.AddonRuntime;
 import io.github.janguenter.bluemap.supplementaries.profile.Supplementaries385Profile;
 
@@ -56,7 +62,7 @@ class ProfileResourceExtensionTest {
         new ProfileResourceExtension(pack, runtime).loadResources(roots);
 
         assertFalse(runtime.active());
-        assertEquals("required-model-alias-missing", runtime.detail());
+        assertEquals("required-installed-resource-missing", runtime.detail());
         wrappersBefore.forEach((wrapper, model) ->
                 assertSame(model, pack.getModels().get(wrapper)));
     }
@@ -76,6 +82,20 @@ class ProfileResourceExtensionTest {
             pack.getModels().put(Key.parse(wrapper), model());
             pack.getModels().put(Key.parse(target), model());
         });
+        pack.getModels().put(Key.parse("supplementaries:block/globe_stand"), solidModel());
+        pack.getModels().put(Key.parse("supplementaries:block/globe_the_world"), solidModel());
+        pack.getModels().put(
+                Key.parse("supplementaries:block/books/book_enchanted"),
+                solidModel()
+        );
+        for (String block : List.of(
+                "supplementaries:globe",
+                "supplementaries:globe_sepia",
+                "supplementaries:book_pile",
+                "supplementaries:book_pile_horizontal"
+        )) {
+            pack.getBlockStates().put(Key.parse(block), state());
+        }
         return pack;
     }
 
@@ -97,6 +117,21 @@ class ProfileResourceExtensionTest {
 
     private static Model model() {
         return new Model(new Element[0]);
+    }
+
+    private static Model solidModel() {
+        return new Model(new Element(
+                Vector3f.ZERO,
+                Vector3f.ONE,
+                Map.of()
+        ));
+    }
+
+    private static BlockState state() {
+        return new BlockState(new Variants(
+                new VariantSet[0],
+                new VariantSet(new Variant(new ResourcePath<Model>("minecraft:block/air")))
+        ));
     }
 
     private static AddonRuntime runtime() throws ReflectiveOperationException {

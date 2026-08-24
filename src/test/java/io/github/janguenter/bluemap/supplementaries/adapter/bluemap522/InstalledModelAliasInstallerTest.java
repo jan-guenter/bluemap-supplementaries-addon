@@ -64,10 +64,10 @@ class InstalledModelAliasInstallerTest {
     }
 
     @Test
-    void exactProfileHasEightDisjointWrapperAndTargetKeys() {
-        assertEquals(8, Supplementaries385Profile.MODEL_ALIASES.size());
+    void exactProfileHasFourteenDisjointWrapperAndTargetKeys() {
+        assertEquals(14, Supplementaries385Profile.MODEL_ALIASES.size());
         assertEquals(
-                16,
+                28,
                 Supplementaries385Profile.MODEL_ALIASES.entrySet().stream()
                         .flatMap(entry -> java.util.stream.Stream.of(
                                 entry.getKey(), entry.getValue()))
