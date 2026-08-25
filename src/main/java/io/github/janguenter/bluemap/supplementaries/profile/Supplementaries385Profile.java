@@ -5,6 +5,7 @@
 package io.github.janguenter.bluemap.supplementaries.profile;
 
 import java.util.List;
+import java.util.Map;
 
 /** Exact All the Mons 1.2.0 profile `supplementaries-1.21.1-3.8.5`. */
 public final class Supplementaries385Profile {
@@ -26,6 +27,55 @@ public final class Supplementaries385Profile {
                     "moonlight-neoforge-1.21.1-3.3.0.jar",
                     2_135_671L,
                     "30420824c7f9fbca0317551c8fd6bbdce01c8d745edf5bc8d61e42393c5f0335"
+            )
+    );
+    public static final Map<String, String> MODEL_ALIASES = Map.ofEntries(
+            Map.entry("supplementaries:block/jar", "supplementaries:block/jar_model"),
+            Map.entry("supplementaries:block/goblet", "supplementaries:block/goblet_empty"),
+            Map.entry(
+                    "supplementaries:block/blackboard",
+                    "supplementaries:block/blackboard_frame"
+            ),
+            Map.entry(
+                    "supplementaries:block/flower_box",
+                    "supplementaries:block/flower_box_model"
+            ),
+            Map.entry(
+                    "supplementaries:block/flower_box_floor",
+                    "supplementaries:block/flower_box_floor_model"
+            ),
+            Map.entry(
+                    "supplementaries:block/flower_box_ceiling",
+                    "supplementaries:block/flower_box_ceiling_model"
+            ),
+            Map.entry("supplementaries:block/faucet", "supplementaries:block/faucet_model"),
+            Map.entry(
+                    "supplementaries:block/faucet_on",
+                    "supplementaries:block/faucet_model_on"
+            ),
+            Map.entry(
+                    "supplementaries:block/timber_frame_loader",
+                    "supplementaries:block/timber_frame"
+            ),
+            Map.entry(
+                    "supplementaries:block/timber_brace_loader",
+                    "supplementaries:block/timber_brace"
+            ),
+            Map.entry(
+                    "supplementaries:block/timber_brace_loader_f",
+                    "supplementaries:block/timber_brace_f"
+            ),
+            Map.entry(
+                    "supplementaries:block/timber_cross_brace_loader",
+                    "supplementaries:block/timber_cross_brace"
+            ),
+            Map.entry(
+                    "supplementaries:block/bellows",
+                    "supplementaries:item/bellows"
+            ),
+            Map.entry(
+                    "supplementaries:block/jar_boat",
+                    "supplementaries:item/jar_boat"
             )
     );
 

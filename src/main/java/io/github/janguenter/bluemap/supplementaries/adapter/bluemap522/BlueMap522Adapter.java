@@ -7,7 +7,7 @@ package io.github.janguenter.bluemap.supplementaries.adapter.bluemap522;
 import de.bluecolored.bluemap.core.resources.pack.resourcepack.ResourcePack;
 import io.github.janguenter.bluemap.supplementaries.activation.AddonRuntime;
 
-/** BlueMap 5.22 registration boundary. Family renderer registrations go here. */
+/** BlueMap 5.22 registration boundary for the exact resource extension. */
 public final class BlueMap522Adapter {
 
     private static final AddonRuntime RUNTIME = AddonRuntime.INSTANCE;
@@ -17,7 +17,7 @@ public final class BlueMap522Adapter {
     private BlueMap522Adapter() {
     }
 
-    /** Registers only the safe exact-profile probe in the generated seed. */
+    /** Registers the fail-closed exact-profile resource extension. */
     public static synchronized boolean install() {
         if (!RegistryGuard.canRegister(ResourcePack.Extension.REGISTRY, EXTENSION)) {
             RUNTIME.fail("registry-collision");

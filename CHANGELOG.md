@@ -1,7 +1,11 @@
 # Changelog
 
-## Unreleased
+## 0.1.0-alpha.1 - 2026-08-25
 
 - Generated a fail-closed Java 21 BlueMap add-on seed for `supplementaries-1.21.1-3.8.5`.
-- SCAFFOLD_NOT_IMPLEMENTED: renderer implementation and visual acceptance
-  remain pending.
+- Added atomic installed-model fallbacks for jars, goblets, blackboards, flower
+  boxes, faucets, timber members, bellows, jar boats, and book piles.
+- Reconstructed both static globe variants from exact installed models and
+  atlas textures without bundling Supplementaries assets.
+- Kept NBT-driven contents, mimic fills, text, and animation outside this pass.
+- Passed disposable full-pack visual staging and owner acceptance.

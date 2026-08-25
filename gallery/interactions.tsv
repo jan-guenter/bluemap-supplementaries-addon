@@ -1,0 +1,9 @@
+case_id	reason	action
+jar-empty	fluid and captured-mob contents live in block-entity data	right-click with a compatible filled container or prepare a captured jar
+goblet-empty	fluid contents live in the Moonlight soft-fluid tank	right-click with a compatible drink or filled container
+cage-empty	the captured mob is stored in block-entity data	capture a supported small mob with a cage item before placement
+flag-red	custom banner patterns live in block-entity data	apply a patterned banner or edit through ordinary gameplay
+doormat	custom text lives in block-entity data	use the in-game editor to add text
+statue	skin and pose data live in block-entity data	configure the statue through ordinary gameplay
+cannon	aim and loaded-projectile states require gameplay interaction	aim or load the cannon in-game for non-neutral variants
+globe	yaw, spin and sheared variants live in block-entity data	interact with the globe for non-neutral variants

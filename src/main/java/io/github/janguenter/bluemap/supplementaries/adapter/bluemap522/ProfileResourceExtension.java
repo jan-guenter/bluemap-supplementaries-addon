@@ -12,7 +12,7 @@ import io.github.janguenter.bluemap.supplementaries.profile.Supplementaries385Pr
 
 import java.nio.file.Path;
 
-/** Exact-artifact admission hook; family routing deliberately remains stock. */
+/** Exact-artifact admission hook for installed Supplementaries wrapper models. */
 final class ProfileResourceExtension implements ResourcePackExtension {
 
     private final ResourcePack resourcePack;
@@ -33,13 +33,37 @@ final class ProfileResourceExtension implements ResourcePackExtension {
             runtime.inactive("exact-artifact-missing-or-duplicate");
             return;
         }
-
-        // SCAFFOLD_NOT_IMPLEMENTED: validate installed resources, register the
-        // family renderer, route only owned hosts, then call runtime.activate().
-        if (resourcePack.getBlockStates() == null) {
-            runtime.fail("resource-pack-unavailable");
+        Path supplementariesJar = ExactArtifactDetector.match(
+                roots,
+                Supplementaries385Profile.ARTIFACTS.getFirst()
+        ).orElse(null);
+        if (supplementariesJar == null) {
+            runtime.inactive("exact-artifact-missing-or-duplicate");
             return;
         }
-        runtime.inactive("family-renderer-not-implemented");
+
+        boolean installed;
+        try {
+            if (!InstalledModelAliasInstaller.canInstall(
+                    resourcePack.getModels(),
+                    Supplementaries385Profile.MODEL_ALIASES
+            )) {
+                runtime.inactive("required-installed-resource-missing");
+                return;
+            }
+            installed = InstalledStaticModelInstaller.install(resourcePack, supplementariesJar)
+                    && InstalledModelAliasInstaller.install(
+                            resourcePack.getModels(),
+                            Supplementaries385Profile.MODEL_ALIASES
+                    );
+        } catch (IllegalArgumentException exception) {
+            runtime.fail("invalid-model-alias-profile");
+            return;
+        }
+        if (!installed) {
+            runtime.inactive("required-installed-resource-missing");
+            return;
+        }
+        runtime.activate();
     }
 }

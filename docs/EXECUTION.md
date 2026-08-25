@@ -1,7 +1,8 @@
 # Add-on execution
 
-This repository starts inactive and stock-safe. Implement only the smallest
-observed Supplementaries rendering defect before staging.
+The first prototype fixes the bounded wrapper-model defect with atomic aliases
+to exact installed resources. The runtime stays inactive if any required
+wrapper or target model is absent.
 
 ## Prototype
 
@@ -40,8 +41,8 @@ Record `visual_acceptance: true` under `owner_accepted_staging`, and record the
 production JAR, sources JAR, POM and Gradle module file names, sizes and hashes
 under `final_release_artifacts`.
 
-Promote `addon_version` through a pull request, remove every
-`SCAFFOLD_NOT_IMPLEMENTED` marker, and run with all exact candidate properties:
+Promote `addon_version` through a pull request, clear every remaining prototype
+placeholder, and run with all exact candidate properties:
 
 ```bash
 gradle --no-daemon -PbluemapSourcePath=../bluemap-backport \

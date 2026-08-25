@@ -1,2 +1,39 @@
-case_id	label	x	y	z	block_state	expected
-stock-control	stone stock rendering control	176	100	175	minecraft:stone	stock-visible
+case_id	label	x	y	z	block_state	family	expected	setup
+way-sign	seeded standing oak and spruce signpost	176	101	176	supplementaries:way_sign	custom-model/signpost	post-and-two-signs-visible	command
+way-sign-wall	seeded wall signpost	181	101	176	supplementaries:way_sign_wall	custom-model/signpost	wall-host-and-sign-visible	command
+flower-box	floor flower box with three plants	186	101	176	supplementaries:flower_box[facing=north,face=floor]	custom-model/flower-box	box-and-three-plants-visible	command
+jar-empty	empty jar glass model	191	101	176	supplementaries:jar	custom-model/jar	empty-glass-jar-visible	none
+blackboard-pattern	blackboard with deterministic chalk X	196	101	176	supplementaries:blackboard[facing=north]	custom-model/blackboard	frame-board-and-chalk-X-visible	command
+book-pile	upright book pile	201	101	176	supplementaries:book_pile	custom-model/book-pile	book-model-visible	command
+book-pile-horizontal	horizontal book pile	176	101	181	supplementaries:book_pile_horizontal	custom-model/book-pile	horizontal-book-model-visible	command
+goblet-empty	empty goblet custom model	181	101	181	supplementaries:goblet	custom-model/goblet	model-visible	none
+faucet-on	enabled faucet with water state	186	101	181	supplementaries:faucet[facing=north,enabled=true,connected=false,powered=false,has_water=true]	custom-model/faucet	model-visible	none
+rope-knot-mimic	rope knot around an oak fence	191	101	181	supplementaries:rope_knot[axis=y,type=post,up=true,down=true]	custom-model/rope-knot	mimic-host-and-rope-visible	command
+rope-buntings	rope bunting custom model	196	101	181	supplementaries:rope_buntings[up=true]	custom-model/rope-bunting	model-visible	none
+awning-slanted	red slanted awning extra rotation	201	101	181	supplementaries:awning_red[slanted=true,facing=north,bottom=true]	custom-model/awning	model-visible	none
+rope-top	connected vertical rope top	176	103	186	supplementaries:rope[up=true,down=true]	connected-model/rope	model-visible	none
+rope-middle	connected vertical rope middle	176	102	186	supplementaries:rope[up=true,down=true]	connected-model/rope	model-visible	none
+rope-bottom	connected vertical rope bottom knot	176	101	186	supplementaries:rope[up=true,down=false,knot=true]	connected-model/rope	model-visible	none
+timber-frame-mimic	brick-filled timber frame	181	101	186	supplementaries:timber_frame[has_block=true]	custom-model/frame	timber-and-brick-fill-visible	command
+timber-brace-mimic	deepslate-filled timber brace	186	101	186	supplementaries:timber_brace[has_block=true,flipped=false]	custom-model/frame	brace-and-deepslate-fill-visible	command
+timber-cross-brace-mimic	mossy-filled timber cross brace	191	101	186	supplementaries:timber_cross_brace[has_block=true]	custom-model/frame	cross-brace-and-mossy-fill-visible	command
+item-shelf	item shelf with diamond sword	196	101	186	supplementaries:item_shelf[facing=north]	block-entity/item-display	shelf-and-item-visible	command
+notice-board	notice board with writable book	201	101	186	supplementaries:notice_board[facing=north,has_book=true]	block-entity/item-display	board-and-book-visible	command
+pedestal	pedestal with diamond	176	101	191	supplementaries:pedestal	block-entity/item-display	pedestal-and-item-visible	command
+crystal-display	fully powered crystal display	181	101	191	supplementaries:crystal_display[power=15,facing=north]	block-state/display	model-visible	none
+globe	standard globe	186	101	191	supplementaries:globe[facing=north]	block-entity/globe	stand-and-sphere-visible	none
+globe-sepia	sepia globe	191	101	191	supplementaries:globe_sepia[facing=north]	block-entity/globe	stand-and-sepia-sphere-visible	none
+hourglass	sand-filled upright hourglass	196	101	191	supplementaries:hourglass[facing=up]	block-entity/hourglass	frame-and-sand-visible	command
+clock-two-faced	two-faced wall clock	201	101	191	supplementaries:clock_block[facing=north,two_faced=true]	block-entity/clock	case-and-clock-hands-visible	none
+flag-red	red flag cloth	176	101	196	supplementaries:flag_red	block-entity/flag	pole-and-cloth-visible	none
+bunting-red	red ceiling bunting	181	101	196	supplementaries:bunting_red[axis=x]	block-entity/bunting	model-visible	none
+cage-empty	empty cage	186	101	196	supplementaries:cage	block-entity/cage	cage-frame-visible	none
+cannon	neutral cannon	191	101	196	supplementaries:cannon	block-entity/cannon	base-and-barrel-visible	none
+doormat	plain doormat	196	101	196	supplementaries:doormat[facing=north]	block-entity/doormat	model-visible	none
+wind-vane	neutral wind vane	201	101	196	supplementaries:wind_vane	block-entity/wind-vane	base-and-vane-visible	none
+statue	default statue	176	101	201	supplementaries:statue[facing=north]	block-entity/statue	base-and-statue-visible	none
+bellows	neutral bellows	181	101	201	supplementaries:bellows	block-entity/bellows	model-visible	none
+bubble-block	bubble block renderer	186	101	201	supplementaries:bubble_block	block-entity/bubble	transparent-bubble-visible	none
+jar-boat	jar boat	191	101	201	supplementaries:jar_boat[facing=north]	block-entity/jar-boat	model-visible	none
+urn	empty urn	196	101	201	supplementaries:urn	block-entity/urn	model-visible	none
+enderman-head	enderman head with eye renderer	201	101	201	supplementaries:enderman_head	block-entity/head	head-and-eyes-visible	none
