@@ -8,6 +8,25 @@ the add-on reuses concrete models already installed by the exact candidate JAR,
 adds static book fallbacks, and reconstructs both gallery globes from their
 installed stand, body, and texture-atlas resources.
 
+## Clone
+
+Clone the toolkit submodule with the add-on:
+
+```bash
+git clone --recurse-submodules \
+  https://github.com/jan-guenter/bluemap-supplementaries-addon.git
+```
+
+Initialize it in an existing clone before running Gradle:
+
+```bash
+git submodule update --init --recursive -- tooling/bluemap-addon-toolkit
+```
+
+The submodule supplies the Gradle convention source. `requirements/toolkit.txt`
+separately pins the published `0.2.0-alpha.1` Python CLI used by artifact and
+staged-entry checks.
+
 ## Build
 
 ```bash
