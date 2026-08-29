@@ -4,6 +4,15 @@ The first prototype fixes the bounded wrapper-model defect with atomic aliases
 to exact installed resources. The runtime stays inactive if any required
 wrapper or target model is absent.
 
+Before running Gradle gates, activate a Python 3.11 or newer virtual
+environment and install the exact development-only toolkit into it:
+
+```bash
+python -m pip install --disable-pip-version-check --no-deps \
+  --require-hashes --only-binary=:all: \
+  --requirement requirements/toolkit.txt
+```
+
 ## Prototype
 
 Acquire and verify the exact candidate JARs outside Git. Their Gradle
@@ -30,9 +39,9 @@ Freeze that accepted JAR's functional entries once; the writer refuses to
 overwrite an existing acceptance record:
 
 ```bash
-python tools/verify_staged_equivalence.py \
+bluemap-addon-toolkit jar-entries write \
   --jar /absolute/path/accepted-staging.jar \
-  --entries provenance/accepted-staging-entries.sha256 --write
+  --entries provenance/accepted-staging-entries.sha256
 ```
 
 Record the manifest in `provenance/release.json` as
