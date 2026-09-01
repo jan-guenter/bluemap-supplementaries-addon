@@ -3,7 +3,7 @@
 A Java 21 BlueMap add-on for the exact `supplementaries-1.21.1-3.8.5` profile in All the Mons
 `1.2.0` / Minecraft `1.21.1`.
 
-Status: owner-accepted `0.1.0-alpha.1` release candidate. After exact admission,
+Status: owner-accepted `0.1.0-alpha.2` BlueMap 5.23 release candidate. After exact admission,
 the add-on reuses concrete models already installed by the exact candidate JAR,
 adds static book fallbacks, and reconstructs both gallery globes from their
 installed stand, body, and texture-atlas resources.
@@ -20,10 +20,12 @@ git clone --recurse-submodules \
 Initialize it in an existing clone before running Gradle:
 
 ```bash
-git submodule update --init --recursive -- tooling/bluemap-addon-toolkit
+git submodule update --init --recursive -- \
+  tooling/bluemap-addon-toolkit modules/bluemap-addon-adapter-api
 ```
 
-The submodule supplies the Gradle convention source. `requirements/toolkit.txt`
+The submodules supply the Gradle convention source and the exact shared 5.23
+adapter helpers. `requirements/toolkit.txt`
 separately pins the published `0.3.0-alpha.1` Python CLI used by artifact and
 staged-entry checks.
 
