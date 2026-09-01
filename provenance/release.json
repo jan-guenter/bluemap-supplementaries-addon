@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "unpublished-migration-candidate",
+  "status": "owner-accepted-release-candidate",
   "published": false,
   "version": "0.1.0-alpha.2",
   "release_date": "2026-09-01",
@@ -84,9 +84,56 @@
     "production_archive_boundary_gate": true,
     "sources_archive_boundary_gate": true,
     "local_candidate_artifact_identity_gate": true,
-    "authoritative_pr_ci_reproduction": false,
+    "authoritative_pr_ci_reproduction": true,
     "local_gradle_version": "9.6.1",
     "local_java_runtime": "21.0.12.1+1",
-    "exact_alpha_2_runtime_review": false
+    "exact_alpha_2_runtime_review": true
+  },
+  "owner_accepted_staging": {
+    "visual_acceptance": true,
+    "accepted_on": "2026-09-01",
+    "scope": "Owner accepted the Supplementaries gallery in the combined 51-add-on BlueMap 5.23 integration review. The accepted renderer, profile, textures, and gallery are the alpha.2 candidate bytes; the aggregate staging JAR differs only at the integration entrypoint overlay.",
+    "integration_run": "bluemap-atmons-integration-20260901-next-review-batch-v39",
+    "candidate_manifest": {
+      "sha256": "3ddf4c4989bf2eca1b3207f32428c67343d82a32e21002c3767b14d765808f55",
+      "local_candidate_base_source_commit": "0df5c3f37ccb9d266c360ae279eb0826f86e71c2",
+      "local_candidate_base_artifact": {
+        "file_name": "bluemap-supplementaries-addon-0.1.0-alpha.2.jar",
+        "size": 70369,
+        "sha256": "0da87473c5ca912d2a3970d640b3176dc26470d293ed78e7ed137c643ff5fb66"
+      },
+      "aggregate_staging_artifact": {
+        "file_name": "bluemap-supplementaries-addon-0.1.0-alpha.1.jar",
+        "size": 70739,
+        "sha256": "b91c2c99ff58152c5833b97e859a7eae686b2432f2bdb40190dc0f4ed4187347"
+      }
+    },
+    "browser_capture": {
+      "file_name": "v39-supplementaries-sanity-20260901.png",
+      "size": 939181,
+      "sha256": "ff5dd83f96d038f0d364ea83bf0046cbd77e9b740a34152e8f7746962f0925d5"
+    }
+  },
+  "final_release_artifacts": {
+    "production_jar": {
+      "file_name": "bluemap-supplementaries-addon-0.1.0-alpha.2.jar",
+      "size": 70369,
+      "sha256": "0da87473c5ca912d2a3970d640b3176dc26470d293ed78e7ed137c643ff5fb66"
+    },
+    "sources_jar": {
+      "file_name": "bluemap-supplementaries-addon-0.1.0-alpha.2-sources.jar",
+      "size": 51906,
+      "sha256": "5c27c5ba7ec06014bc409e1d5b1da2847f782d660eb229135f4f8fda144c46b1"
+    },
+    "pom": {
+      "file_name": "bluemap-supplementaries-addon-0.1.0-alpha.2.pom",
+      "size": 1365,
+      "sha256": "18c2a563e60e0ee1d2bb5e1de102177b9e0f6f4791b00fa314ece6ee1e1dda5e"
+    },
+    "gradle_module": {
+      "file_name": "bluemap-supplementaries-addon-0.1.0-alpha.2.module.json",
+      "size": 2873,
+      "sha256": "85e65627a94b58af6d52ec03dfef23fcd422b44419fb2ff40e3a2a0f5d262855"
+    }
   }
 }
