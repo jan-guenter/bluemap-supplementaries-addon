@@ -33,23 +33,23 @@
   "candidate_artifacts": {
     "production_jar": {
       "file_name": "bluemap-supplementaries-addon-0.1.0-alpha.2.jar",
-      "size": 0,
-      "sha256": "PENDING"
+      "size": 70369,
+      "sha256": "0da87473c5ca912d2a3970d640b3176dc26470d293ed78e7ed137c643ff5fb66"
     },
     "sources_jar": {
       "file_name": "bluemap-supplementaries-addon-0.1.0-alpha.2-sources.jar",
-      "size": 0,
-      "sha256": "PENDING"
+      "size": 51906,
+      "sha256": "5c27c5ba7ec06014bc409e1d5b1da2847f782d660eb229135f4f8fda144c46b1"
     },
     "pom": {
       "file_name": "bluemap-supplementaries-addon-0.1.0-alpha.2.pom",
-      "size": 0,
-      "sha256": "PENDING"
+      "size": 1365,
+      "sha256": "18c2a563e60e0ee1d2bb5e1de102177b9e0f6f4791b00fa314ece6ee1e1dda5e"
     },
     "gradle_module": {
       "file_name": "bluemap-supplementaries-addon-0.1.0-alpha.2.module.json",
-      "size": 0,
-      "sha256": "PENDING"
+      "size": 2873,
+      "sha256": "85e65627a94b58af6d52ec03dfef23fcd422b44419fb2ff40e3a2a0f5d262855"
     }
   },
   "gallery_candidate": {
@@ -83,7 +83,7 @@
     "adapter_api_gitlink_and_source_tree_gate": true,
     "production_archive_boundary_gate": true,
     "sources_archive_boundary_gate": true,
-    "local_candidate_artifact_identity_gate": false,
+    "local_candidate_artifact_identity_gate": true,
     "authoritative_pr_ci_reproduction": false,
     "local_gradle_version": "9.6.1",
     "local_java_runtime": "21.0.12.1+1",
